@@ -200,6 +200,6 @@ export async function repositoryRemoveAll() {
 
 export async function update() {
   await core.group("Update the list of available opam packages", async () => {
-    await exec("sh", ["-c", "ulimit -n unlimited && command -v opam && opam update"]);
+    await exec("sh", ["-c", "ulimit -n unlimited && ulimit -a && command -v opam && opam update"]);
   });
 }
